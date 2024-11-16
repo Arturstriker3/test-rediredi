@@ -1,5 +1,23 @@
-@import"https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,700&display=swap";
-@import"https://fonts.googleapis.com/icon?family=Material+Icons";
+@font-face {
+  font-family: 'TTCommonsTrl';
+  src: url('/src/assets/fonts/TTCommonsTrl-Medium.woff2') format('woff2');
+  font-weight: 500; /* ou outro peso correspondente */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTCommonsTrl';
+  src: url('/src/assets/fonts/TTCommonsTrl-DemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTCommonsTrl';
+  src: url('/src/assets/fonts/TTCommonsTrl-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
 
 @tailwind base;
 @tailwind components;
@@ -12,6 +30,6 @@
 }
 
 body {
-  font-family: 'Roboto', 'poppins',sans-serif;
+  font-family: 'TTCommonsTrl', 'Roboto', sans-serif;
   min-height: 100vh;
 }
