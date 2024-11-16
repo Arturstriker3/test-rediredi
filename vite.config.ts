@@ -1,5 +1,6 @@
 import path from "path"
 import vue from "@vitejs/plugin-vue"
+import vuetify from 'vite-plugin-vuetify';
 import { defineConfig } from "vite"
 
 import tailwind from "tailwindcss"
@@ -11,7 +12,10 @@ export default defineConfig({
       plugins: [tailwind(), autoprefixer()],
     },
   },
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    vuetify({ autoImport: true }),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
