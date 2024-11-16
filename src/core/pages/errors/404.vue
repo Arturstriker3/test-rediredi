@@ -14,15 +14,15 @@ const goHome = () => {
 <template>
   <div class="container lg:max-w-7xl mx-auto text-center mt-40">
     <div class="space-y-8">
-      <h1 class="text-9xl text-gray-800 font-bold">404</h1>
-      <h2 class="text-4xl text-gray-800">
+      <h1 class="text-9xl text-text-primary font-bold">404</h1>
+      <h2 class="text-4xl text-text-primary">
         Página não encontrada
       </h2>
-      <p class="text-gray-800">
+      <p class="text-text-primary">
         Desculpe, mas a página
         '{{ pathMatch }}' não foi encontrada
       </p>
-      <button @click="goHome" class="bg-gray-800 rounded text-white py-3 px-5">
+      <button @click="goHome" class="bg-icon-primary rounded text-white py-3 px-5">
         Voltar para o Início
       </button>
     </div>
