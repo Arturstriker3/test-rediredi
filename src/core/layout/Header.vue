@@ -14,15 +14,19 @@ const findPageName = (path: string) => {
 };
 
 watch(() => router.currentRoute.value.path, (newPath) => {
+    if (newPath === '/') {
+        pageName.value = 'Categorias';
+    } else {
+        pageName.value = findPageName(newPath);
+    }
+
     showBackButton.value = newPath !== '/';
-    pageName.value = findPageName(newPath);
 });
 
 const navigateHome = () => {
     router.push('/');
 };
 </script>
-
 
 <template>
     <header class="h-16">
@@ -32,11 +36,9 @@ const navigateHome = () => {
                     <Icon class="h-6 w-6 text-icon-primary" icon="mdi:arrow-left" />
                 </VBtn>
             </div>
-
             <div class="flex justify-center items-center w-1/3">
                 <p class="text-text-primary text-lg font-medium">{{ pageName }}</p>
             </div>
-
             <div class="w-1/3"></div>
         </div>
     </header>

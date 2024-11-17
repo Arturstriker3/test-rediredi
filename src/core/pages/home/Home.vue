@@ -4,7 +4,7 @@ import homeBtn from '@/core/components/homeBtn.vue';
 </script>
 
 <template>
-  <main class="flex flex-col gap-2 px-4 pt-4">
+  <main class="flex flex-col gap-6 px-4 pt-4">
     <div class="flex flex-col gap-6">
       <div class="flex flex-col gap-1">
         <h3 class="font-semibold text-xl text-text-primary">Organize seu catálogo com categorias e subcategorias</h3>
