@@ -41,17 +41,17 @@ onMounted(() => {
           ajuda seus clientes a encontrarem os produtos desejados.</p>
       </div>
     </div>
-    <div v-if="categoriesTotal < 1" class="flex">
-      <homeSingleBtn route="/categories" />
+    <div v-if="!categoriesStore.isCategoriesServiceCall">
+      <div v-if="categoriesTotal < 1" class="flex">
+        <homeSingleBtn route="/categories" />
+      </div>
+      <div v-else class="flex flex-col gap-3">
+        <homeBtn name="Categorias" :quantity="categoriesTotal" route="/categories" />
+        <homeBtn name="Subcategorias" :quantity="0" route="/subcategories" />
+      </div>
     </div>
-    <div v-else class="flex flex-col gap-3">
-      <homeBtn name="Categoria" :quantity="5" route="/categories" />
-      <homeBtn name="Subcategorias" :quantity="0" route="/subcategories" />
-    </div>
-    <div>
-      <ul>
-        <li v-for="category in categories" :key="category.id">{{ category.name }}</li>
-      </ul>
+    <div class="flex justify-center items-center h-32 " v-else>
+      <v-progress-circular color="icon-primary" indeterminate :size="124" :width="124"></v-progress-circular>
     </div>
   </main>
 </template>
