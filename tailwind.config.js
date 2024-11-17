@@ -1,17 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        'text-primary'  : '#29354F',
-        'icon-primary'  : '#DA3468',
+        "text-primary": "#29354F",
+        "text-secondary": "#586893",
+        "icon-primary": "#DA3468",
+        "icon-secondary": "#8693B4",
       },
     },
   },
   plugins: [],
-}
-
+};
