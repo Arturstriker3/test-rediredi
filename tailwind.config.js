@@ -12,6 +12,7 @@ export default {
         "btn-activated": "#F24F82",
         "btn-disabled": "#DDE2EF",
         "home-single-btn": "#FFE2EB",
+        "categorie-item": "#F3F3F5",
       },
     },
   },
