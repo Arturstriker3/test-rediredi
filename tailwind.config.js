@@ -11,6 +11,7 @@ export default {
         "input-border": "#008197",
         "btn-activated": "#F24F82",
         "btn-disabled": "#DDE2EF",
+        "home-single-btn": "#FFE2EB",
       },
     },
   },

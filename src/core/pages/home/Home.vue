@@ -1,5 +1,9 @@
 <script lang="ts" setup>
 import homeBtn from '@/core/components/homeBtn.vue';
+import homeSingleBtn from '@/core/components/homeSingleBtn.vue';
+import { ref } from 'vue';
+
+const categoriesTotal = ref(0);
 
 </script>
 
@@ -12,7 +16,10 @@ import homeBtn from '@/core/components/homeBtn.vue';
           ajuda seus clientes a encontrarem os produtos desejados.</p>
       </div>
     </div>
-    <div class="flex flex-col gap-3">
+    <div v-if="categoriesTotal < 1" class="flex">
+      <homeSingleBtn route="/categories" />
+    </div>
+    <div v-else class="flex flex-col gap-3">
       <homeBtn name="Categoria" :quantity="5" route="/categories" />
       <homeBtn name="Subcategorias" :quantity="0" route="/subcategories" />
     </div>
