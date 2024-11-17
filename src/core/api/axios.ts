@@ -6,9 +6,10 @@ const toaster = createToaster();
 
 const axiosInstance = axios.create();
 
+const accessToken = "Afg6PIgOPTZtwlSYED7bJHR0rbQ6sIUe";
+
 axiosInstance.interceptors.request.use((request) => {
-    const accessToken = localStorage.getItem("accessToken");
-    request.headers.Authorization = `Bearer ${accessToken}`;
+    request.headers.Authorization = `Basic ${accessToken}`;
     return request;
 })
 
