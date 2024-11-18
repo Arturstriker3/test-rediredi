@@ -8,8 +8,12 @@ class categoriesService {
     return axiosInstance.get(`${this.urlBase}`);
   }
 
-  getChildren() {
-    return axiosInstance.get(`${this.urlBase}`);
+  patch(newName: string, categoryId: string) {
+    const data = {
+      name: newName,
+    };
+
+    return axiosInstance.patch(`${this.urlBase}/${categoryId}`, data);
   }
 }
 

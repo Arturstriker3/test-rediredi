@@ -25,8 +25,8 @@ watch(
 <template>
     <main class="flex flex-col">
         <div class="flex flex-row items-center gap-2 w-full">
-            <modelInput class="w-full" v-model="userInput" placeholder="Crie uma categoria" />
-            <confirmBtn :hasInput="userInput.length > 0" :disabled="userInput.length < 1" @click="">
+            <modelInput :disabled="categoriesStore.isCategoriesServiceCall" class="w-full" v-model="userInput" placeholder="Crie uma categoria" />
+            <confirmBtn :hasInput="userInput.length > 0" :disabled="userInput.length < 1 || categoriesStore.isCategoriesServiceCall" @click="">
                 Criar
             </confirmBtn>
         </div>
