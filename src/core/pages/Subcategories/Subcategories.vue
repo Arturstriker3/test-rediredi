@@ -1,6 +1,31 @@
 <script setup>
-import { VExpansionPanels, VExpansionPanel, VIcon } from 'vuetify/components';
-import 'material-design-icons-iconfont/dist/material-design-icons.css';
+import { ref, watch } from 'vue';
+import { useCategoriesStore } from '@/core/stores/categoriesStore';
+import categoriesItem from '@/core/components/categoriesItem.vue';
+import newSubCategory from '@/core/components/newSubCategory.vue';
+
+const categoriesStore = useCategoriesStore();
+
+const categoriesTotal = ref(0);
+const categories = ref(categoriesStore.categories); 
+const userInput = ref('');
+
+watch(
+    () => categoriesStore.categories,
+    (newCategories) => {
+        categories.value = newCategories;
+        categoriesTotal.value = newCategories.length;
+    },
+    { immediate: true }
+);
+
+const createNewCategory = async () => {
+    try {
+        await categoriesStore.createCategory(userInput.value);
+    } catch (error) {
+        console.error('Erro ao criar a categoria:', error);
+    }
+}
 </script>
 
 <template>
@@ -8,23 +33,26 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css';
         <p class="text-icon-secondary text-base font-medium h-10">
             Adicione as subcategorias abaixo das categorias pai
         </p>
-        <div class="flex flex-col gap-3">
-            <v-expansion-panels>
+        <div v-if="true" class="flex flex-col gap-3">
+            <v-expansion-panels v-for="category in categories" :key="category.id" >
                 <v-expansion-panel rounded="lg">
                     <template #title>
                         <div class="flex items-center w-full">
                             <span class="flex w-full justify-start text-base font-medium">
-                                Title
+                                {{ category.name }}
                             </span>
                         </div>
                     </template>
                     <v-expansion-panel-text>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est
-                        labore voluptatibus!
-                        Eaque cupiditate minima.
+                        <newSubCategory/>
                     </v-expansion-panel-text>
                 </v-expansion-panel>
             </v-expansion-panels>
+        </div>
+        <div v-else >
+            <div class="flex justify-center items-center h-32">
+                <v-progress-circular color="icon-primary" indeterminate :size="124" :width="124"></v-progress-circular>
+            </div>
         </div>
     </main>
 </template>
