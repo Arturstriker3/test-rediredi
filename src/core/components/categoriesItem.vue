@@ -22,6 +22,11 @@ const closeEditMode = () => {
     isEditMode.value = false;
     userInput.value = props.text ?? '';
 };
+
+const patchCategorie = () => {
+    console.log(userInput.value);
+    closeEditMode();
+}; 
 </script>
 
 <template>
@@ -51,7 +56,8 @@ const closeEditMode = () => {
             </VMenu>
         </div>
     </div>
-    <div v-else >
-        <editInput class="w-full" v-model="userInput" :placeholder="props.text" @closeEdit="closeEditMode()" />
+    <div v-else>
+        <editInput class="w-full" v-model="userInput" :placeholder="props.text" @closeEdit="closeEditMode()"
+            @confirmUpdate="patchCategorie()" />
     </div>
 </template>

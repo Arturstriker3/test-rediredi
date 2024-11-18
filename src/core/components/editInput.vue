@@ -17,7 +17,7 @@ const props = defineProps({
 
 const categoriesStore = useCategoriesStore();
 
-const emit = defineEmits(['update:modelValue', 'closeEdit']); 
+const emit = defineEmits(['update:modelValue', 'closeEdit', 'confirmUpdate']);
 
 const onInput = (event: Event) => {
     const input = event.target as HTMLInputElement;
@@ -26,6 +26,10 @@ const onInput = (event: Event) => {
 
 const onCancel = () => {
     emit('closeEdit');
+};
+
+const updateCategorie = () => {
+    emit('confirmUpdate');
 };
 </script>
 
@@ -37,7 +41,7 @@ const onCancel = () => {
             :placeholder="placeholder" :value="props.modelValue" @input="onInput" maxlength="50" />
         <div class="absolute top-1/2 right-4 transform -translate-y-1/2 flex space-x-2 z-10">
             <editCategoriesCancelBtn @click="onCancel()" />
-            <editCategorieConfirmBtn :isActive="!categoriesStore.isCategoriesServiceCall" @click="" />
+            <editCategorieConfirmBtn :isActive="!categoriesStore.isCategoriesServiceCall" @click="updateCategorie()" />
         </div>
     </div>
 </template>
