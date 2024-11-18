@@ -1,25 +1,28 @@
-# Repositório pronto para desenvolver aplicações Front End.
+# Repositório para teste técnico RediRedi.
 
 ## Clonar Repositório
 ```
-git clone https://github.com/Arturstriker3/Vue-Typescript-Tailwind.git NovoProjeto
+git clone https://github.com/Arturstriker3/test-rediredi
 ```
 
-## Remover Referência Original
+## Abrir Repositório
 ```
-rm -rf .git
+cd test-rediredi
 ```
 
-## Inicializar um novo repositório Git:
+## Instalar Dependências
 ```
-git init
+pnpm install
+```
+
+## Rodar localmente:
+```
+pnpm run dev
 ```
 
 ### Vue/Typescript/Tailwind:
  
- Esse repositório tem como foco aumentar a velocidade para produção de aplicações Front End já tendo arquitetura de pastas, utils e libs/packages modernos que utilizo diariamente.
- 
- **Packages presentes:**
+ **Visual**
 * Roboto, poppins, sans-serif;
 * Material Icons;
 * Tailwind;
