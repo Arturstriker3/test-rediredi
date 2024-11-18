@@ -20,13 +20,25 @@ watch(
     },
     { immediate: true }
 );
+
+const createNewCategory = async () => {
+    console.log('chamou poste aqui')
+    try {
+        await categoriesStore.createCategory(userInput.value);
+    } catch (error) {
+        console.error('Erro ao criar a categoria:', error);
+    }
+}
 </script>
 
 <template>
     <main class="flex flex-col">
         <div class="flex flex-row items-center gap-2 w-full">
-            <modelInput :disabled="categoriesStore.isCategoriesServiceCall" class="w-full" v-model="userInput" placeholder="Crie uma categoria" />
-            <confirmBtn :hasInput="userInput.length > 0" :disabled="userInput.length < 1 || categoriesStore.isCategoriesServiceCall" @click="">
+            <modelInput :disabled="categoriesStore.isCategoriesServiceCall" class="w-full" v-model="userInput"
+                placeholder="Crie uma categoria" />
+            <confirmBtn :hasInput="userInput.length > 0"
+                :disabled="userInput.length < 1 || categoriesStore.isCategoriesServiceCall"
+                @click="createNewCategory()">
                 Criar
             </confirmBtn>
         </div>
@@ -37,7 +49,7 @@ watch(
                     categorias
                     que deseja criar</p>
             </div>
-            <div v-else>
+            <div class="flex flex-col gap-2" v-else>
                 <categoriesItem v-for="category in categories" :key="category.id" :text="category.name"
                     :category="category" />
             </div>

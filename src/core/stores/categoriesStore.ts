@@ -44,6 +44,18 @@ export const useCategoriesStore = defineStore("categories", {
         this.getCategories();
       }
     },
+
+    async createCategory(name: string) {
+      this.isCategoriesServiceCall = true;
+      try {
+        await categoriesService.post(name);
+      } catch (error) {
+        console.error("Erro ao criar a categoria:", error);
+        throw new Error("Falha ao criar a categoria");
+      } finally {
+        this.getCategories();
+      }
+    },
   },
 
   getters: {

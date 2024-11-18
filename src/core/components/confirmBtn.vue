@@ -24,7 +24,7 @@ defineProps({
     }" rounded="xl" :style="{
         opacity: disabled || !hasInput ? '0.6' : '1',
         pointerEvents: disabled || !hasInput ? 'none' : 'auto'
-    }" @click="$emit('click')">
+    }">
         <slot>Confirmar</slot>
     </v-btn>
 </template>

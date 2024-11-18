@@ -19,6 +19,14 @@ class categoriesService {
   delete(categoryId: string) {
     return axiosInstance.delete(`${this.urlBase}/${categoryId}`);
   }
+
+  post(name: string) {
+    const data = {
+      name: name,
+    };
+
+    return axiosInstance.post(`${this.urlBase}`, data);
+  }
 }
 
 export default new categoriesService();
