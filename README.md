@@ -10,6 +10,11 @@ git clone https://github.com/Arturstriker3/test-rediredi
 cd test-rediredi
 ```
 
+## Instalar PNPM
+```
+npm install -g pnpm
+```
+
 ## Instalar Dependências
 ```
 pnpm install
@@ -20,7 +25,23 @@ pnpm install
 pnpm run dev
 ```
 
-### Vue/Typescript/Tailwind:
+# Execução pelo docker
+
+## Clonar Repositório
+```
+git clone https://github.com/Arturstriker3/test-rediredi
+```
+
+## Abrir Repositório
+```
+cd test-rediredi
+```
+
+## Buildar Imagem e Rodar o Container
+```
+docker build -t test-rediredi:1.0 .
+docker run -d -p 9192:80 test-rediredi:1.0
+```
  
  **Visual**
 ![image](https://github.com/user-attachments/assets/ceab5d71-c712-4bf4-98db-f94b20120d72)

@@ -1,14 +1,19 @@
-<script setup>
+<script setup lang="ts">
 import { ref, watch } from 'vue';
 import { useCategoriesStore } from '@/core/stores/categoriesStore';
-import categoriesItem from '@/core/components/categoriesItem.vue';
+// import categoriesItem from '@/core/components/categoriesItem.vue';
 import newSubCategory from '@/core/components/newSubCategory.vue';
+
+interface Category {
+  id: string;
+  name: string;
+}
 
 const categoriesStore = useCategoriesStore();
 
 const categoriesTotal = ref(0);
-const categories = ref(categoriesStore.categories); 
-const userInput = ref('');
+const categories = ref<Category[]>(categoriesStore.categories as Category[]);
+// const userInput = ref('');
 
 watch(
     () => categoriesStore.categories,

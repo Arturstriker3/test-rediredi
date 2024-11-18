@@ -1,0 +1,36 @@
+# Ignorar arquivos e pastas do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar node_modules (será instalado durante o processo de build)
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-lock.yaml
+
+# Ignorar arquivos de configuração do editor de código
+.vscode
+.idea
+*.sublime-workspace
+*.sublime-project
+
+# Ignorar diretórios de teste
+tests
+test
+
+# Ignorar arquivos de build (gerados após build)
+dist
+build
+
+# Ignorar arquivos temporários de sistemas de backup ou outros
+*.bak
+*.tmp
+*.swp
+
+# Ignorar arquivos de logs
+*.log
+
+# Ignorar arquivos de configuração específicos de ambientes
+.env
+.env.local
+.env.*.local
