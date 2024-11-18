@@ -22,7 +22,6 @@ watch(
 );
 
 const createNewCategory = async () => {
-    console.log('chamou poste aqui')
     try {
         await categoriesStore.createCategory(userInput.value);
     } catch (error) {

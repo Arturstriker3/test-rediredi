@@ -27,6 +27,17 @@ class categoriesService {
 
     return axiosInstance.post(`${this.urlBase}`, data);
   }
+
+  postChildren(name: string, parentId: string) {
+    const data = {
+      parent: {
+        id: parentId,
+      },
+      name: name,
+    };
+
+    return axiosInstance.post(`${this.urlBase}`, data);
+  }
 }
 
 export default new categoriesService();

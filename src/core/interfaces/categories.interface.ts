@@ -3,5 +3,7 @@ export interface ICategories {
   createdAt: Date;
   updatedAt: Date;
   name: string;
+  parent: string;
+  children: string[];
   hasChildren: boolean;
 }
