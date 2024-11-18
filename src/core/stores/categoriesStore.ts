@@ -56,6 +56,18 @@ export const useCategoriesStore = defineStore("categories", {
         this.getCategories();
       }
     },
+
+    async createSubCategory(name: string, parentId: string) {
+      this.isCategoriesServiceCall = true;
+      try {
+        await categoriesService.postChildren(name, parentId);
+      } catch (error) {
+        console.error("Erro ao criar a subcategoria:", error);
+        throw new Error("Falha ao criar a subcategoria");
+      } finally {
+        this.getCategories();
+      }
+    },
   },
 
   getters: {

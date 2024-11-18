@@ -18,14 +18,6 @@ watch(
     },
     { immediate: true }
 );
-
-const createNewCategory = async () => {
-    try {
-        await categoriesStore.createCategory(userInput.value);
-    } catch (error) {
-        console.error('Erro ao criar a categoria:', error);
-    }
-}
 </script>
 
 <template>
@@ -33,7 +25,7 @@ const createNewCategory = async () => {
         <p class="text-icon-secondary text-base font-medium h-10">
             Adicione as subcategorias abaixo das categorias pai
         </p>
-        <div v-if="true" class="flex flex-col gap-3">
+        <div v-if="!categoriesStore.isCategoriesServiceCall" class="flex flex-col gap-3">
             <v-expansion-panels v-for="category in categories" :key="category.id" >
                 <v-expansion-panel rounded="lg">
                     <template #title>
@@ -44,7 +36,7 @@ const createNewCategory = async () => {
                         </div>
                     </template>
                     <v-expansion-panel-text>
-                        <newSubCategory/>
+                        <newSubCategory :childrenParent="category.id" />
                     </v-expansion-panel-text>
                 </v-expansion-panel>
             </v-expansion-panels>
