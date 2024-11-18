@@ -15,6 +15,10 @@ class categoriesService {
 
     return axiosInstance.patch(`${this.urlBase}/${categoryId}`, data);
   }
+
+  delete(categoryId: string) {
+    return axiosInstance.delete(`${this.urlBase}/${categoryId}`);
+  }
 }
 
 export default new categoriesService();

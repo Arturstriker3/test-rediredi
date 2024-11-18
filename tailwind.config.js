@@ -13,6 +13,8 @@ export default {
         "btn-disabled": "#DDE2EF",
         "home-single-btn": "#FFE2EB",
         "categorie-item": "#F3F3F5",
+        "alert-color": "#E0A32E",
+        "alert-text-color": "#31436F",
       },
     },
   },

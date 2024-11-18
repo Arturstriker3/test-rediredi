@@ -32,6 +32,18 @@ export const useCategoriesStore = defineStore("categories", {
         this.getCategories();
       }
     },
+
+    async deleteCategory(categoryId: string) {
+      this.isCategoriesServiceCall = true;
+      try {
+        await categoriesService.delete(categoryId);
+      } catch (error) {
+        console.error("Erro ao deletar a categoria:", error);
+        throw new Error("Falha ao deletar a categoria");
+      } finally {
+        this.getCategories();
+      }
+    },
   },
 
   getters: {
