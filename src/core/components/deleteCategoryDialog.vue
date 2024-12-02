@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, defineEmits, ref, watch } from 'vue';
+import { defineProps, defineEmits } from 'vue';
 import { useCategoriesStore } from '@/core/stores/categoriesStore';
 
 const props = defineProps({
