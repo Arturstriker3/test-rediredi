@@ -81,5 +81,7 @@ const closeDeleteModal = () => {
         <editInput class="w-full" v-model="userInput" :placeholder="props.text" @closeEdit="closeEditMode()"
             @confirmUpdate="patchCategorie()" />
     </div>
-    <deleteCategoryDialog :isOpen="isDeleteModalOpen" :categoryId="categoryToDelete" @close="closeDeleteModal" />
+    <VDialog v-model="isDeleteModalOpen" min-width="200px" max-width="600px" max-height="320px">
+        <deleteCategoryDialog :categoryId="categoryToDelete" @close="closeDeleteModal" />
+    </VDialog>
 </template>
