@@ -1,4 +1,3 @@
-# Etapa de build
 FROM node:18 as build-stage
 
 WORKDIR /app

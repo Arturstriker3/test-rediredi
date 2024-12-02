@@ -49,5 +49,3 @@ docker run -d -p 9192:80 test-rediredi:1.0
 ![image](https://github.com/user-attachments/assets/ae7e2538-9a65-4531-b136-11c28e5f0d88)
 
 ![image](https://github.com/user-attachments/assets/6313894b-04bb-453d-afce-6b06c3b0668b)
-
-![Uploading image.png…]()
