@@ -33,7 +33,7 @@ const createNewCategory = async () => {
 </script>
 
 <template>
-    <main class="flex flex-col">
+    <main class="flex flex-col ">
         <div class="flex flex-row items-center gap-2 w-full">
             <modelInput :disabled="categoriesStore.isCategoriesServiceCall" class="w-full" v-model="userInput"
                 placeholder="Crie uma categoria" />

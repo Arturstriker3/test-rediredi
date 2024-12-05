@@ -25,7 +25,11 @@ watch(() => route.path, (newPath: string) => {
   <div class="app-container">
     <Header v-if="shouldShowHeader" />
     <div class="content-container">
-      <router-view />
+      <v-app>
+        <v-main>
+          <router-view />
+        </v-main>
+      </v-app>
     </div>
   </div>
 </template>
@@ -41,6 +45,8 @@ watch(() => route.path, (newPath: string) => {
 .content-container {
   flex: 1;
   overflow-y: auto;
-  padding: 16px;
+  padding-top: 16px;
+  padding-right: 16px;
+  padding-left: 16px;
 }
 </style>
