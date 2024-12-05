@@ -22,31 +22,14 @@ watch(() => route.path, (newPath: string) => {
 </script>
 
 <template>
-  <div class="app-container">
-    <Header v-if="shouldShowHeader" />
-    <div class="content-container">
-      <v-app>
-        <v-main>
+  <v-app>
+    <div class="h-screen w-full flex flex-col">
+      <Header v-if="shouldShowHeader" />
+      <v-main>
+        <div class="pt-4 pr-4 pl-4" >
           <router-view />
-        </v-main>
-      </v-app>
+        </div>
+      </v-main>
     </div>
-  </div>
+  </v-app>
 </template>
-
-<style scoped lang="scss">
-.app-container {
-  height: 100svh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-}
-
-.content-container {
-  flex: 1;
-  overflow-y: auto;
-  padding-top: 16px;
-  padding-right: 16px;
-  padding-left: 16px;
-}
-</style>

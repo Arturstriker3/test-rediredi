@@ -15,7 +15,7 @@ export default {
         "categorie-item": "#F3F3F5",
         "alert-color": "#E0A32E",
         "alert-text-color": "#31436F",
-        "input-border-disabled": "#DDE2EF",
+        "border-color": "#F3F3F5",
       },
     },
   },
@@ -24,7 +24,9 @@ export default {
       addBase({
         ":root": {
           "--color-input-border": theme("colors.input-border"),
-          "--color-input-border-disabled": theme("colors.input-border-disabled"),
+          "--color-input-border-disabled": theme("colors.btn-disabled"),
+          "--color-chip-bg": theme("colors.btn-disabled"),
+          "--color-border-color": theme("colors.border-color"),
         },
       });
     },

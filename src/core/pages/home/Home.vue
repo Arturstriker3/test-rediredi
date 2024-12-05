@@ -37,7 +37,7 @@ onMounted(() => {
   <main class="flex flex-col gap-6">
     <div class="flex flex-col gap-6">
       <div class="flex flex-col gap-1">
-        <h3 class="font-semibold text-xl text-text-primary">Organize seu catálogo com categorias e subcategorias</h3>
+        <h3 class="font-semibold text-xl text-alert-text-color">Organize seu catálogo com categorias e subcategorias</h3>
         <p class="font-medium text-base text-text-secondary">Ao usar as categorias e subcategorias do catálogo, você
           ajuda seus clientes a encontrarem os produtos desejados.</p>
       </div>

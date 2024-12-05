@@ -41,5 +41,13 @@ const navigateHome = () => {
             </div>
             <div class="w-1/3"></div>
         </div>
+        <div class="border-bottom"></div>
     </header>
 </template>
+
+<style scoped>
+.border-bottom {
+    height: 0.5px;
+    background-color: var(--color-border-color);
+}
+</style>

@@ -25,8 +25,8 @@ const navigate = () => {
       <span>{{ props.name }}</span>
     </div>
     <div class="flex w-1/3 justify-start">
-      <v-chip v-show="props.quantity > 0" class="h-7 min-w-10 flex justify-center items-center">
-        <p class="text-center text-lg font-medium">{{ props.quantity }}</p>
+      <v-chip v-show="props.quantity > 0" class="h-7 min-w-10 flex justify-center items-center" :style="{ backgroundColor: 'var(--color-chip-bg)' }">
+        <p class="text-center text-lg font-medium text-text-secondary">{{ props.quantity }}</p>
       </v-chip>
     </div>
     <div class="flex w-1/3 justify-end">
