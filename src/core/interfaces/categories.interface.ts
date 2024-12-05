@@ -14,3 +14,8 @@ export interface ISubCategories {
   children: string[];
   hasChildren: boolean;
 }
+
+export interface IChildrenCategoriesReturn {
+  children: string[];
+  hasChildren: boolean;
+}

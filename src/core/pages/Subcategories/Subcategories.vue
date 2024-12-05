@@ -23,6 +23,16 @@ watch(
     },
     { immediate: true }
 );
+
+const getSubCategories = async (id: string) => {
+    console.log(id);
+    // try {
+    //     await categoriesStore.getSubCategories(id);
+    // } catch (error) {
+    //     console.log(error);
+    // }
+}
+
 </script>
 
 <template>
@@ -32,7 +42,7 @@ watch(
         </p>
         <div v-if="!categoriesStore.isCategoriesServiceCall" class="flex flex-col gap-3">
             <v-expansion-panels v-for="category in categories" :key="category.id" >
-                <v-expansion-panel rounded="lg">
+                <v-expansion-panel @click="getSubCategories(category.id)" rounded="lg">
                     <template #title>
                         <div class="flex items-center w-full">
                             <span class="flex w-full justify-start text-base font-medium">

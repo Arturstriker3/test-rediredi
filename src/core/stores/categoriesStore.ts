@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import categoriesService from "@/core/services/categories";
+import { IChildrenCategoriesReturn } from "@/core/interfaces/categories.interface";
 
 export const useCategoriesStore = defineStore("categories", {
   state: () => ({
@@ -66,6 +67,28 @@ export const useCategoriesStore = defineStore("categories", {
         throw new Error("Falha ao criar a subcategoria");
       } finally {
         this.getCategories();
+      }
+    },
+
+    async getSubCategories(
+      categoryId: string
+    ): Promise<IChildrenCategoriesReturn> {
+      this.isCategoriesServiceCall = true;
+      try {
+        const response = await categoriesService.getChildrens(categoryId);
+
+        const result: IChildrenCategoriesReturn = {
+          children: response.data.children ?? [],
+          hasChildren: response.data.hasChildren ?? false,
+        };
+
+        console.log("Categorias filtradas:", result);
+        return result;
+      } catch (error) {
+        console.error("Erro ao buscar categorias:", error);
+        throw new Error("Falha ao carregar categorias");
+      } finally {
+        this.isCategoriesServiceCall = false;
       }
     },
   },

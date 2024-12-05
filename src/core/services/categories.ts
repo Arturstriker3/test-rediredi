@@ -38,6 +38,10 @@ class categoriesService {
 
     return axiosInstance.post(`${this.urlBase}`, data);
   }
+
+  getChildrens(categoryId: string) {
+    return axiosInstance.get(`${this.urlBase}/${categoryId}`);
+  }
 }
 
 export default new categoriesService();
