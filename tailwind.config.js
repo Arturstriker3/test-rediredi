@@ -15,6 +15,7 @@ export default {
         "categorie-item": "#F3F3F5",
         "alert-color": "#E0A32E",
         "alert-text-color": "#31436F",
+        "input-border-disabled": "#DDE2EF",
       },
     },
   },
@@ -23,6 +24,7 @@ export default {
       addBase({
         ":root": {
           "--color-input-border": theme("colors.input-border"),
+          "--color-input-border-disabled": theme("colors.input-border-disabled"),
         },
       });
     },

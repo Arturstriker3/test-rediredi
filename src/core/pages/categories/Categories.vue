@@ -5,6 +5,7 @@ import { ref, watch } from 'vue';
 import { useCategoriesStore } from '@/core/stores/categoriesStore';
 import { ICategories } from '@/core/interfaces/categories.interface';
 import categoriesItem from '@/core/components/categoriesItem.vue';
+import homeBtnSkeleton2 from '@/core/components/loaders/homeBtnSkeleton2.vue';
 
 const categoriesStore = useCategoriesStore();
 
@@ -24,6 +25,7 @@ watch(
 const createNewCategory = async () => {
     try {
         await categoriesStore.createCategory(userInput.value);
+        userInput.value = '';
     } catch (error) {
         console.error('Erro ao criar a categoria:', error);
     }
@@ -53,9 +55,9 @@ const createNewCategory = async () => {
                     :category="category" />
             </div>
         </div>
-        <div v-else>
-            <div class="flex justify-center items-center h-32">
-                <v-progress-circular color="icon-primary" indeterminate :size="124" :width="124"></v-progress-circular>
+        <div v-else >
+            <div class="mt-4 flex flex-col gap-3">
+                <homeBtnSkeleton2 v-for="n in Math.max(categoriesTotal, 1)" :key="n" />
             </div>
         </div>
     </main>

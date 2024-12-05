@@ -13,7 +13,7 @@ const categoriesStore = useCategoriesStore();
 
 const isCreateMode = ref(false);
 const userInput = ref("");
-const inputPlaceholder = ref("Nova subcategoria");
+const inputPlaceholder = ref("Adicionar subcategoria");
 
 const newCategoryChildren = () => {
     userInput.value = "";
@@ -35,18 +35,16 @@ const patchCategorie = async () => {
 </script>
 
 <template>
-    <button
-        class="flex w-full items-center gap-2 h-11 pr-4 pl-6 py-3 rounded-full cursor-pointer bg-home-single-btn hover:brightness-90 transition-all"
-        @click="newCategoryChildren" v-if="!isCreateMode">
-        <div class="flex w-2/3 justify-start text-icon-primary font-medium text-base">
-            <span class="font-medium text-base">Adicionar subcategorias</span>
+    <div @click="newCategoryChildren" v-if="!isCreateMode" class="flex flex-row items-center h-14 py-3 px-4 cursor-pointer rounded-lg bg-categorie-item">
+        <div class="flex w-2/3 justify-start">
+            <p class="text-icon-primary font-medium text-base" >{{ inputPlaceholder }}</p>
         </div>
         <div class="flex w-1/3 justify-end">
             <Icon class="w-5 h-5 text-icon-primary" icon="mdi:plus" />
         </div>
-    </button>
+    </div>
     <div v-else>
-        <createSubCategoryInput class="w-full" v-model="userInput" :placeholder="inputPlaceholder"
+        <createSubCategoryInput class="w-full" v-model="userInput" placeholder=""
             @closeEdit="closeEditMode()" @confirmUpdate="patchCategorie()" />
     </div>
 </template>

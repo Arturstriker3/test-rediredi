@@ -1,12 +1,15 @@
 class ErrorUtils {
     defaultError = "Houve um erro interno, tente novamente em instantes.";
-    get(err: any) {
+
+    get(err: any): string {
         if (err.response && err.response.data) {
-            const { statusCode, error, message } = err.response.data;
-            if (statusCode && error && message) {
-                return `${error}: ${message}`;
+            const { message } = err.response.data;
+
+            if (message) {
+                return message;
             }
         }
+
         return this.defaultError;
     }
 }
