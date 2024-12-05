@@ -4,6 +4,7 @@ import homeSingleBtn from '@/core/components/homeSingleBtn.vue';
 import { onMounted, ref, watch } from 'vue';
 import { useCategoriesStore } from '@/core/stores/categoriesStore';
 import { ICategories } from '@/core/interfaces/categories.interface';
+import homeBtnSkeleton2 from '@/core/components/loaders/homeBtnSkeleton2.vue';
 
 const categoriesStore = useCategoriesStore();
 
@@ -50,8 +51,11 @@ onMounted(() => {
         <homeBtn name="Subcategorias" :quantity="0" route="/subcategories" />
       </div>
     </div>
-    <div class="flex justify-center items-center h-32 " v-else>
-      <v-progress-circular color="icon-primary" indeterminate :size="124" :width="124"></v-progress-circular>
+    <div v-else>
+      <div class="flex flex-col gap-3">
+        <homeBtnSkeleton2 />
+        <homeBtnSkeleton2 />
+      </div>
     </div>
   </main>
 </template>

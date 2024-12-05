@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: 'TTCommonsTrl';
   src: url('/src/assets/fonts/TTCommonsTrl-Medium.woff2') format('woff2');
@@ -18,10 +22,6 @@
   font-weight: 700;
   font-style: normal;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 * {
   padding: 0;

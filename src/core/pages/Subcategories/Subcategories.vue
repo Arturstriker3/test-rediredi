@@ -3,6 +3,7 @@ import { ref, watch } from 'vue';
 import { useCategoriesStore } from '@/core/stores/categoriesStore';
 // import categoriesItem from '@/core/components/categoriesItem.vue';
 import newSubCategory from '@/core/components/newSubCategory.vue';
+import homeBtnSkeleton2 from '@/core/components/loaders/homeBtnSkeleton2.vue';
 
 interface Category {
   id: string;
@@ -42,10 +43,10 @@ const getSubCategories = async (id: string) => {
         </p>
         <div v-if="!categoriesStore.isCategoriesServiceCall" class="flex flex-col gap-3">
             <v-expansion-panels v-for="category in categories" :key="category.id" >
-                <v-expansion-panel @click="getSubCategories(category.id)" rounded="lg">
+                <v-expansion-panel class="border" @click="getSubCategories(category.id)" rounded="lg">
                     <template #title>
                         <div class="flex items-center w-full">
-                            <span class="flex w-full justify-start text-base font-medium">
+                            <span class="flex w-full justify-start text-base text-text-primary font-semibold">
                                 {{ category.name }}
                             </span>
                         </div>
@@ -57,8 +58,8 @@ const getSubCategories = async (id: string) => {
             </v-expansion-panels>
         </div>
         <div v-else >
-            <div class="flex justify-center items-center h-32">
-                <v-progress-circular color="icon-primary" indeterminate :size="124" :width="124"></v-progress-circular>
+            <div class="flex flex-col gap-3">
+                <homeBtnSkeleton2 v-for="n in Math.max(categoriesTotal, 1)" :key="n" />
             </div>
         </div>
     </main>
@@ -72,6 +73,10 @@ const getSubCategories = async (id: string) => {
 
 .mdi-chevron-up {
     color: #DA3468;
+}
+
+.v-expansion-panel__shadow {
+  box-shadow: none !important;
 }
 
 </style>
