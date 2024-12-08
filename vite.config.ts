@@ -1,7 +1,8 @@
 import path from "path"
 import vue from "@vitejs/plugin-vue"
-import vuetify from 'vite-plugin-vuetify';
+import vuetify from "vite-plugin-vuetify"
 import { defineConfig } from "vite"
+import { UserConfigExport } from "vitest/config"
 
 import tailwind from "tailwindcss"
 import autoprefixer from "autoprefixer"
@@ -25,6 +26,10 @@ export default defineConfig({
     outDir: "dist",
   },
   server: {
-    open: true
-  }
-})
+    open: true,
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+  },
+} as UserConfigExport)
