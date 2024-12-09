@@ -12,7 +12,7 @@ Esse repositório contém o teste técnico RediRedi realizado com Vue/Typescript
 
 Intruções para rodar o projeto. Para rodar o projeto poder ser usado o ambiente de desenvolvimento ou a imagem docker do projeto.
 
-### Execução com ambiente de desenvolvimento
+### Execução com ambiente de desenvolvimento {#execucao-com-ambiente-de-desenvolvimento}
 
 ```bash
 # Clonar Repositório
@@ -47,7 +47,7 @@ docker run -d -p 9192:80 test-rediredi:1.0
 
 ## Testes Unitários
 
-Para rodar os testes, precisa ter seguido o fluxo de \*Rodar com ambiente de desenvolvimento
+Para rodar os testes, necessita ter seguido o fluxo de [Rodar com ambiente de desenvolvimento](#execucao-com-ambiente-de-desenvolvimento).
 
 ```bash
 # Rodar testes no terminal
