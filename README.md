@@ -5,8 +5,8 @@ Esse repositório contém o teste técnico RediRedi realizado com Vue/Typescript
 ## Tabela de Conteúdo
 
 - [Instalação](#instalação)
-- [Testes](#testes unitários)
-- [Visual](#design visual)
+- [Testes](#testes-unitários)
+- [Visual](#design-visual)
 
 ## Instalação
 
