@@ -47,7 +47,7 @@ docker run -d -p 9192:80 test-rediredi:1.0
 
 ## Testes Unitários
 
-Para rodar os testes, necessita ter seguido o fluxo de [Rodar com ambiente de desenvolvimento](#execucao-com-ambiente-de-desenvolvimento).
+Para rodar os testes, necessita ter seguido o fluxo de [Rodar com ambiente de desenvolvimento](#instalação).
 
 ```bash
 # Rodar testes no terminal
